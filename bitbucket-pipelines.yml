@@ -1,4 +1,4 @@
-image: docker pull samueldebruyn/debian-git 
+image: samueldebruyn/debian-git 
 
 pipelines:
   default:
