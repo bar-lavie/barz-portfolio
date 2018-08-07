@@ -1,4 +1,5 @@
 # use on first time: - git ftp init --user $FTP_USERNAME --passwd $FTP_PASSWORD ftp://vangus-datacenterx2.co.il/httpdocs
+# thanks to: https://www.youtube.com/watch?v=8HZhHtZebdw&t=10s
 image: samueldebruyn/debian-git 
 
 pipelines:
