@@ -8,14 +8,42 @@ $(document).ready(function() {
   }, 1000);
 
   /*=============================
+========== Scroll effects ========== 
+=============================*/
+
+  var sections = [];
+
+  $("[data-color]").each(function() {
+    sections.push({
+      el: $(this),
+      top_of_element: $(this).offset().top,
+      bottom_of_element: $(this).offset().top + $(this).outerHeight(true),
+      color: $(this).data("color")
+    });
+  });
+
+
+  $(window).on("scroll", function() {
+    var top_of_screen = $(window).scrollTop();
+    var bottom_of_screen = $(window).scrollTop() + window.innerHeight;
+
+    $.each(sections, function(key, value) {
+      if (bottom_of_screen > value.top_of_element && top_of_screen < value.bottom_of_element) {
+        if (top_of_screen > value.top_of_element - 50) {
+          $(".menu-button span").css("backgroundColor", value.color);
+          $(".menu-button p").css("color", value.color);
+        }
+      }
+    });
+  });
+
+  /*=============================
 ========== Typed init ========== 
 =============================*/
 
   setTimeout(() => {
     var typed = new Typed(".typed", {
-      strings: [
-        "<h1>Bar Zioni</h1><h2><span class='bolder'>Full Stack</span><br>Web Developer</h2>"
-      ],
+      strings: ["<h1>Bar Zioni</h1><h2><span class='bolder'>Full Stack</span><br>Web Developer</h2>"],
       typeSpeed: 30,
       onComplete: self => {
         $(".download").animate(
@@ -31,10 +59,10 @@ $(document).ready(function() {
   }, 1500);
 
   /*=============================
-========== Hamburger ========== 
+========== Menu Button ========== 
 =============================*/
 
-  $(".hamburger").on("click", function() {
+  $(".menu-button").on("click", function() {
     $(this).toggleClass("is-active");
     if ($(this).hasClass("is-active")) {
       $(".menu").animate(
@@ -74,7 +102,7 @@ $(document).ready(function() {
 =============================*/
 
   $(".menu a").on("click", function(e) {
-    $(".hamburger").toggleClass("is-active");
+    $(".menu-button").toggleClass("is-active");
 
     $(".menu").animate(
       {

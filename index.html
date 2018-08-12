@@ -2,6 +2,16 @@
 <html lang="he">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74113000-5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-74113000-5');
+    </script>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -13,7 +23,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="./assets/libs/hamburgers.min.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="./assets/style/style.css" />
 
@@ -29,11 +38,11 @@
         </div>
     </div>
 
-    <button class="hamburger hamburger--collapse" type="button">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
-    </button>
+    <div class="menu-button">
+        <span></span>
+        <p>MENU</p>
+        <span></span>
+    </div>
 
     <div class="menu d-flex justify-content-center align-items-center">
         <ul>
@@ -52,7 +61,7 @@
         </ul>
     </div>
 
-    <div id="intro" class="section d-flex flex-column justify-content-center align-items-start">
+    <div id="intro" class="section d-flex flex-column justify-content-center align-items-start" data-color="white">
         <div class="container">
             <div class="typed"></div>
             <br>
@@ -66,7 +75,7 @@
         </div>
     </div>
 
-    <div id="portfolio" class="section d-flex justify-content-center align-items-center">
+    <div id="portfolio" class="section d-flex justify-content-center align-items-center" data-color="black">
         <div class="container">
             <h2 class="section-title mb-5 text-center">Portfolio</h2>
             <div class="slick">
@@ -145,7 +154,7 @@
         </div>
     </div>
 
-    <div id="about" class="section d-flex justify-content-center align-items-center">
+    <div id="about" class="section d-flex justify-content-center align-items-center" data-color="white">
         <div class="container text-center">
             <h2 class="section-title mb-5">About</h2>
             <img src="./assets/img/profile.jpg" class="mb-2" alt="">
@@ -161,7 +170,7 @@
         </div>
     </div>
 
-    <div id="connect" class="section d-flex justify-content-center align-items-center">
+    <div id="connect" class="section d-flex justify-content-center align-items-center" data-color="black">
         <div class="container">
             <h2 class="section-title mb-5 text-center">Let's Connect</h2>
             <div class="d-flex flex-column justify-content-end">
